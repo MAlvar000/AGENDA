@@ -29,12 +29,14 @@ public class InterfazUsuario {
 
             switch (comando) {
                 case "add":
-                    if (partes.length == 3) {
+                    if (partes.length == 5) {
                         String nombre = partes[1];
-                        String telefono = partes[2];
-                        libreta.agregarContacto(new Contacto(nombre, telefono));
+                        String telefono = partes[3];
+                        String apellido = partes[2];
+                        String email = partes[4];
+                        libreta.agregarContacto(new Contacto(nombre, apellido, telefono, email));
                     } else {
-                        System.out.println("Uso: add <nombre> <telefono>");
+                        System.out.println("Uso: add <nombre> <apellido> <telefono> <email>");
                     }
                     break;
                 case "list":
